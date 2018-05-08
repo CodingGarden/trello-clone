@@ -1,0 +1,56 @@
+{
+  "name": "trello-clone-server",
+  "description": "A trello clone.",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "CJ R",
+    "email": "cj@null.computer"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/"
+  },
+  "engines": {
+    "node": "^8.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "scripts": {
+    "test": "npm run eslint && npm run mocha",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "start": "node src/",
+    "dev": "nodemon src/",
+    "mocha": "mocha test/ --recursive --exit"
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^2.1.5",
+    "@feathersjs/authentication-jwt": "^2.0.1",
+    "@feathersjs/authentication-local": "^1.2.1",
+    "@feathersjs/configuration": "^1.0.2",
+    "@feathersjs/errors": "^3.3.0",
+    "@feathersjs/express": "^1.2.2",
+    "@feathersjs/feathers": "^3.1.5",
+    "@feathersjs/socketio": "^3.2.1",
+    "compression": "^1.7.2",
+    "cors": "^2.8.4",
+    "feathers-authentication-hooks": "^0.2.0",
+    "feathers-mongoose": "^6.1.1",
+    "helmet": "^3.12.0",
+    "mongoose": "^5.0.17",
+    "serve-favicon": "^2.5.0",
+    "winston": "^2.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.4",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  }
+}
