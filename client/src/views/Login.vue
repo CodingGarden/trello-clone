@@ -51,13 +51,13 @@ export default {
     ...mapState('auth', { loading: 'isAuthenticatePending' }),
   },
   methods: {
-    ...mapActions('auth', ['authenticate']),
-    login() {
+    ...mapActions('auth', ['authenticate', 'logout']),
+    async login() {
       if (this.valid) {
         this.authenticate({
           strategy: 'local',
           ...this.user,
-        }).then(() => {
+        }).then(async (result) => {
           this.$router.push('/boards');
         }).catch(e => {
           console.error('Authentication error', e);

@@ -9,6 +9,15 @@
         <v-btn flat :to="{ name: 'signup' }">SignUp</v-btn>
       </v-toolbar-items>
       <v-toolbar-items v-if="user">
+        <v-layout justify-content align-center>
+          <h3>{{user.user.displayName}}</h3>
+          <v-avatar
+            :size="40"
+            color="grey lighten-4"
+          >
+            <img :src="user.user.imageUrl" alt="avatar">
+          </v-avatar>
+        </v-layout>
         <v-btn flat @click="logout">LogOut</v-btn>
       </v-toolbar-items>
     </v-toolbar>
