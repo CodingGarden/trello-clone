@@ -21,11 +21,11 @@
   * [x] List
     * [ ] Restrict to board owner
 * [x] Store should update boards/lists when login/logout
-* [ ] Add cards service to server
+* [x] Add cards service to server
 * [ ] User can create/list/view cards for lists on client
-  * [ ] Create
+  * [x] Create
     * [ ] Restrict to board owner
-  * [ ] List
+  * [x] List
     * [ ] Restrict to board owner
   * [ ] View
     * [ ] Restrict to board owner
