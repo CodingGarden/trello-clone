@@ -27,16 +27,20 @@
     * [ ] Restrict to board owner
   * [x] List
     * [ ] Restrict to board owner
-  * [ ] View
-    * [ ] Restrict to board owner
-* [ ] User can move cards from one list to another
-* [ ] User can add other members to a board
-  * [ ] Update restrict to board owner to include members
-* [ ] User can re-arrange lists
+* [x] User can move cards from one list to another
+* [ ] Restrict editing/creating lists/cards to board owner
+  * [ ] Update to work for no boardId in query 
+* [x] Create activities service on server
+* [x] All activities are logged
+* [ ] User can edit title of card
   * [ ] restrict to board members
-* [ ] Create activities service on server
-* [ ] All activities are logged
+* [ ] User can add description to a card
+  * [ ] restrict to board members
 * [ ] User can assign a member to a card
+  * [ ] restrict to board members
+* [ ] User can re-arrange cards in list
+  * [ ] restrict to board members
+* [ ] User can re-arrange lists
   * [ ] restrict to board members
 * [ ] User can add comments to a card
   * [ ] restrict to board members

@@ -2,7 +2,9 @@
   <v-app>
     <v-toolbar
       app>
-      <v-toolbar-title>Trello Clone</v-toolbar-title>
+      <v-toolbar-title>
+        <v-btn flat :to="{ name: 'home' }">Trello Clone</v-btn>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items v-if="!user">
         <v-btn flat :to="{ name: 'login' }">Login</v-btn>
