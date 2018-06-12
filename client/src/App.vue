@@ -1,28 +1,9 @@
 <template>
   <v-app>
-    <v-toolbar
-      app>
-      <v-toolbar-title>
-        <v-btn flat :to="{ name: 'home' }">Trello Clone</v-btn>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items v-if="!user">
-        <v-btn flat :to="{ name: 'login' }">Login</v-btn>
-        <v-btn flat :to="{ name: 'signup' }">SignUp</v-btn>
-      </v-toolbar-items>
-      <v-toolbar-items v-if="user">
-        <v-layout justify-content align-center>
-          <h3>{{user.user.displayName}}</h3>
-          <v-avatar
-            :size="40"
-            color="grey lighten-4"
-          >
-            <img :src="user.user.imageUrl" alt="avatar">
-          </v-avatar>
-        </v-layout>
-        <v-btn flat @click="logout">LogOut</v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
+    <app-navbar
+      :user="user"
+      :logout="logout"
+      ></app-navbar>
     <v-content>
       <router-view/>
     </v-content>
@@ -33,14 +14,18 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'; 
+import { mapActions, mapState } from 'vuex';
+import AppNavbar from '@/components/AppNavbar';
 
 export default {
   name: 'App',
-  data () {
+  components: {
+    AppNavbar,
+  },
+  data() {
     return {
       fixed: false,
-    }
+    };
   },
   computed: {
     ...mapState('auth', { user: 'payload' }),
@@ -50,6 +35,6 @@ export default {
     logout() {
       this.authLogout().then(() => this.$router.push('/login'));
     },
-  }
+  },
 };
 </script>

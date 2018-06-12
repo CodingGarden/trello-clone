@@ -55,10 +55,11 @@
 
 <script>
 import { mapState } from 'vuex';
+import { notEmptyRules } from '@/validators';
 
 export default {
   name: 'signUp',
-  data: (vm) => ({
+  data: vm => ({
     valid: false,
     user: {
       username: '',
@@ -67,8 +68,8 @@ export default {
       displayName: '',
       imageUrl: '',
     },
-    notEmptyRules: [(value) => !!value || 'Cannot be empty.'],
-    confirmPasswordRules: [(confirmPassword) => confirmPassword === vm.user.password || 'Password must match.' ]
+    notEmptyRules,
+    confirmPasswordRules: [confirmPassword => confirmPassword === vm.user.password || 'Password must match.'],
   }),
   computed: {
     ...mapState('users', { loading: 'isCreatePending' }),
@@ -79,7 +80,7 @@ export default {
         const { User } = this.$FeathersVuex;
         const user = new User(this.user);
         user.save()
-          .then(user => {
+          .then((user) => {
             console.log(user);
             this.$router.push('/login');
           });

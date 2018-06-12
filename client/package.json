@@ -40,7 +40,16 @@
     "extends": [
       "plugin:vue/essential",
       "@vue/airbnb"
-    ]
+    ],
+    "rules": {
+      "import/prefer-default-export": 0,
+      "no-shadow": 0,
+      "import/extensions": 0,
+      "no-param-reassign": 0,
+      "no-underscore-dangle": 0,
+      "no-return-assign": 0,
+      "vue/valid-v-on": 0
+    }
   },
   "postcss": {
     "plugins": {

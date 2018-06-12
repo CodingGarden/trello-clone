@@ -5,7 +5,7 @@
         <v-form
           v-if="!loading"
           v-model="valid"
-          @submit.prevent="login"
+          @submit.prevent="login({ valid, user })"
           @keydown.prevent.enter>
           <v-text-field
             v-model="user.username"
@@ -36,34 +36,23 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import { notEmptyRules } from '@/validators';
 
 export default {
   name: 'login',
-  data: (vm) => ({
+  data: () => ({
     valid: false,
     user: {
       username: '',
       password: '',
     },
-    notEmptyRules: [(value) => !!value || 'Cannot be empty.'],
+    notEmptyRules,
   }),
   computed: {
     ...mapState('auth', { loading: 'isAuthenticatePending' }),
   },
   methods: {
-    ...mapActions('auth', ['authenticate', 'logout']),
-    async login() {
-      if (this.valid) {
-        this.authenticate({
-          strategy: 'local',
-          ...this.user,
-        }).then(async (result) => {
-          this.$router.push('/boards');
-        }).catch(e => {
-          console.error('Authentication error', e);
-        });
-      }
-    },
+    ...mapActions('localAuth', ['login']),
   },
 };
 </script>

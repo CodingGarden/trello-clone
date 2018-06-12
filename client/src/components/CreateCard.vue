@@ -23,7 +23,7 @@
             :width="7"
             indeterminate
             color="primary">
-          </v-progress-circular>                
+          </v-progress-circular>
         </div>
       </v-card-title>
     </v-card>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { notEmptyRules } from '@/validators';
 
 export default {
   name: 'create-card',
@@ -43,11 +43,11 @@ export default {
       title: '',
       members: [],
     },
-    notEmptyRules: [(value) => !!value || 'Cannot be empty.'],
+    notEmptyRules,
   }),
   methods: {
     async createCard() {
-      if (this.validCard) {        
+      if (this.validCard) {
         const { Card } = this.$FeathersVuex;
         this.card.boardId = this.boardId;
         this.card.listId = this.listId;
@@ -55,13 +55,13 @@ export default {
         this.creatingCard = true;
         await card.save();
         this.creatingCard = false;
-        this.card = {   
+        this.card = {
           title: '',
           members: [],
         };
         this.createActivity(`**${this.user.displayName}** created card **${card.title}**`);
       }
     },
-  }
+  },
 };
 </script>

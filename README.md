@@ -45,4 +45,11 @@
 * [ ] User can add comments to a card
   * [ ] restrict to board members
 
+
+## Extra
+
+* [ ] Move component state into the Vuex Store
+* [ ] Refactor large components into many smaller components
+* [ ] Make it look prettier
+
 ![](./trello-clone-erd.png)
