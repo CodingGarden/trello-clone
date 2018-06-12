@@ -29,7 +29,7 @@
                     :startDraggingCard="startDraggingCard"
                     :dropCard="dropCard"
                     :createActivity="createActivity"
-                    :user="user.user"
+                    :user="user ? user.user : {}"
                   ></single-list>
                 </v-flex>
                 <new-list-form
