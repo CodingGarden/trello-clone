@@ -1,5 +1,6 @@
 <template>
   <v-app>
+  <div class="></div>
     <app-navbar
       :user="user"
       :logout="logout"
