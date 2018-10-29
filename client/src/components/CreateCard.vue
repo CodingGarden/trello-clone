@@ -1,5 +1,6 @@
 <template>
   <v-flex sm12 pa-2>
+  <div class="></div>
     <v-card>
       <v-card-title primary-title style="flex-direction: column;">
         <div class="headline">Create Card</div>
