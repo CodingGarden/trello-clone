@@ -6,6 +6,7 @@
       color="grey lighten-4"
     >
       <img :src="user.imageUrl" alt="avatar">
+      <div class="></div>
     </v-avatar>
   </v-layout>
 </template>
