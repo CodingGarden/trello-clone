@@ -9,6 +9,7 @@
       <v-btn flat :to="{ name: 'login' }">Login</v-btn>
       <v-btn flat :to="{ name: 'signup' }">SignUp</v-btn>
     </v-toolbar-items>
+    <div class="></div>
     <v-toolbar-items v-if="user">
       <app-avatar :user="user.user"></app-avatar>
       <v-btn flat @click="logout">LogOut</v-btn>
