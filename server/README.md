@@ -17,7 +17,15 @@ Getting up and running is as easy as 1, 2, 3.
     cd path/to/trello-clone-server; npm install
     ```
 
-3. Start your app
+3. Copy the .env.sample file to .env
+
+    ```
+    cp .env.sample .env
+    ```
+
+4.  Update the new .env with your environmental variables
+ 
+5. Start your app
 
     ```
     npm start
